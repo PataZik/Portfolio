@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patrik Alzo - Tech Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+</head>
+<body>
+
+    <nav class="navbar centered-navbar">
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="#ueber-mich">Über mich</a></li>
+                <li><a href="#kenntnisse">Stack</a></li>
+                <li><a href="#lebenslauf">CV</a></li>
+                <li><a href="#kontakt-footer">Kontakt</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <header class="hero-section dark-bg">
+        <div class="hero-content">
+            <div class="hero-flex-container">
+                <div class="profile-image-container">
+                    <img src="fotos/gnRpkJKxz7XEjl0fz46j2BDdylb6mG1N.jpg" alt="Patrik Alzo" class="profile-image">
+                </div>
+                <div class="hero-text-content"><br>
+                    <p class="greeting">// Welcome</p>
+                    <h1>PATRIK ALZO</h1><br>
+                    <p class="tagline">Junior Full-Stack Developer | Fokus auf Web- & Medientechnik</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="ueber-mich" class="section">
+            <h2 class="animate-heading">// Über mich</h2>
+            <div class="section-content animate-content">
+                <p>Als angehender **Full-Stack Developer** verbinde ich meinen starken Hintergrund in der Medientechnik mit einer lösungsorientierten Perspektive auf die Webentwicklung. Mein primärer Antrieb ist die Schaffung von **performanten, funktionsreichen Webseiten**, bei denen das nahtlose Zusammenspiel von **Frontend und Backend** im Mittelpunkt steht.</p>
+                
+                <p>Ich fokussiere mich intensiv auf die Entwicklung der **Kernfunktionalitäten** und der dahinterliegenden Logik, um nicht nur optisch ansprechende, sondern vor allem zuverlässige und benutzerfreundliche digitale Erlebnisse zu gewährleisten. Ich bin hochmotiviert, mein Wissen in **JavaScript**, **Java**, **PHP** und **Datenbankmanagement** einzusetzen und stetig zu vertiefen, um nachhaltige und zukunftssichere Anwendungen zu realisieren.</p>
+            </div>
+        </section>
+
+        <section id="kenntnisse" class="section dark-bg knowledge-section">
+            <h2 class="animate-heading">// Tech Stack</h2>
+            <div class="section-content skills-languages-grid animate-content">
+                <div class="tech-stack-container">
+                    <ul class="skill-list bubble-list">
+                        <li><i class="fas fa-code"></i> HTML / CSS</li>
+                        <li><i class="fab fa-js"></i> JAVASCRIPT</li>
+                        <li><i class="fab fa-java"></i> JAVA</li>
+                        <li><i class="fas fa-server"></i> PHP</li>
+                        <li><i class="fas fa-database"></i> DATENBANK MANAGEMENT</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="lebenslauf" class="section download-cv">
+            <h2 class="animate-heading">// Lebenslauf</h2>
+            <div class="section-content animate-content">
+                <p>Lade meinen vollständigen Lebenslauf herunter, um mehr Details über meine Erfahrungen und Qualifikationen zu erfahren.</p>
+                <a href="dein_lebenslauf.pdf" download class="btn">Download CV <i class="fas fa-download"></i></a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="kontakt-footer" class="dark-bg">
+        <div class="contact-info">
+            <p class="footer-title">./contact</p>
+            <p><i class="fas fa-phone-alt"></i> +43 670 40 80 479</p>
+            <p><i class="fas fa-envelope"></i> alzo.patrik@outlook.com</p>
+        </div>
+        <p class="copyright">&copy; 2025 Patrik Alzo | Built with Code & Passion.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
