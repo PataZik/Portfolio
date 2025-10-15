@@ -20,8 +20,7 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     /* WICHTIG: Dies ist die dunkelste Farbe, um Ränder zu vermeiden */
-    background-color: #0d0d1a; 
-    margin: 50px;
+    background-color: #0d0d1a;
 }
 
 h1, h2, h3 {
