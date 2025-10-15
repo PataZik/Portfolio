@@ -21,7 +21,6 @@ body {
     color: var(--text-color);
     /* WICHTIG: Dies ist die dunkelste Farbe, um Ränder zu vermeiden */
     background-color: #0d0d1a; 
-    margin: 50px;
 }
 
 h1, h2, h3 {
