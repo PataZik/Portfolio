@@ -30,6 +30,9 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', handleSmoothScroll);
     });
 
+    // NEU: Handle smooth scroll für den "Jetzt kontaktieren" Button
+    document.querySelector('.hero-text-content .btn').addEventListener('click', handleSmoothScroll);
+    
     // =======================================================
     // 2. Initial Animationen (Hero Section)
     // =======================================================
@@ -48,7 +51,8 @@ document.addEventListener('DOMContentLoaded', () => {
         ease: "power3.out",
         delay: 0.8 
     });
-    gsap.from(".hero-section .tagline, .hero-section .greeting", {
+    // Fügt den neuen Button zur Animation hinzu
+    gsap.from(".hero-section .tagline, .hero-section .greeting, .hero-content .btn", {
         opacity: 0,
         y: 20,
         duration: 1.0,
@@ -62,9 +66,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // =======================================================
     gsap.to(".hero-content", {
         // Animationseigenschaften, wenn gescrollt wird
-        y: -30, // Reduziert von -100px auf -30px (weniger stark nach oben)
-        opacity: 0.3, // Reduziert von 0 auf 0.2 (nicht komplett unsichtbar, nur transparent)
-        scale: 0.99, // Reduziert von 0.95 auf 0.98 (kaum merklich kleiner)
+        y: -30, 
+        opacity: 0.3, 
+        scale: 0.99, 
         duration: 1, 
         ease: "linear", 
         
@@ -72,8 +76,8 @@ document.addEventListener('DOMContentLoaded', () => {
             trigger: ".hero-section", 
             start: "top -=200", 
             end: "bottom center", 
-            scrub: 2, // Erhöht von 1.5 auf 2 (sanftere Verfolgung des Scrolls)
-            // markers: true, // Zum Debuggen: Kann wieder entfernt werden
+            scrub: 2, 
+            // markers: true, 
         }
     });
 

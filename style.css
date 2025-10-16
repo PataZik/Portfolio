@@ -19,7 +19,6 @@ body {
     font-family: var(--font-body);
     line-height: 1.6;
     color: var(--text-color);
-    /* WICHTIG: Dies ist die dunkelste Farbe, um Ränder zu vermeiden */
     background-color: #0d0d1a;
 }
 
@@ -54,7 +53,6 @@ ul {
 }
 
 .nav-container {
-    /* KORREKTUR: Max-Breite auf 1000px vereinheitlicht */
     max-width: 1000px;
     margin: 0 auto;
     display: flex;
@@ -98,7 +96,7 @@ ul {
 
 /* Header / Hero Section */
 .hero-section {
-    background-color: var(--secondary-color); /* Dunkles Navy: #1a1a2e */
+    background-color: var(--secondary-color);
     color: #fff;
     padding: 80px 20px;
     display: flex;
@@ -111,13 +109,11 @@ ul {
 }
 
 .hero-content {
-    /* KORREKTUR: Max-Breite auf 1000px reduziert und zentriert */
     max-width: 1000px;
     width: 100%;
     margin: 0 auto; 
-    /* WICHTIG für ScrollTrigger: Setze relative position */
     position: relative;
-    z-index: 2; /* Stelle sicher, dass es über dem Hero-Hintergrund liegt, falls nötig */
+    z-index: 2;
 }
 
 /* FOTO LINKS, TEXT RECHTS */
@@ -189,7 +185,6 @@ ul {
     padding: 80px 20px;
     max-width: 1000px;
     margin: 0 auto;
-    /* WICHTIG: Einheitliche Farbe wie Body, um keine Ränder zu sehen */
     background-color: #0d0d1a; 
     padding-top: 80px; 
     margin-top: 0; 
@@ -206,15 +201,11 @@ ul {
 }
 
 #ueber-mich .section-content {
-    /* WICHTIG: Textausrichtung auf Blocksatz */
     text-align: justify; 
 }
 
 
-
 .section.dark-bg {
-    /* Diese dunkle Farbe wird jetzt nur für die 'Kenntnisse'-Sektion verwendet, 
-       um sie von 'Über mich' abzusetzen, hat aber jetzt keine schwarzen Ränder mehr zum Body */
     background-color: var(--secondary-color);
     box-shadow: 0 0 10px rgba(0,0,0,0.3) inset;
 }
@@ -231,45 +222,74 @@ ul {
     margin: 0 0 1em 0; 
 }
 
-/* TECH STACK & SPRACHEN BUBBLES */
+/* ------------------------------------------- */
+/* KENNTNISSE SEKTION (Kategorisierung) */
+/* ------------------------------------------- */
+.skills-languages-grid {
+    /* NEU: Erlaubt 3 Kategorien nebeneinander auf größeren Screens */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+    text-align: center;
+}
 
+.skill-category {
+    background-color: #151525;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    border-top: 3px solid var(--primary-color);
+    /* Setzt die interne Zentrierung zurück, um die volle Grid-Breite zu nutzen */
+    max-width: none; 
+    margin: 0;
+}
+
+.skill-category h3 {
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    color: var(--heading-color);
+    font-family: var(--font-heading);
+}
+
+/* TECH STACK BUBBLES */
 .bubble-list {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column; /* WICHTIG: Bubbles stehen nun untereinander */
     gap: 10px;
     margin-top: 15px;
-    justify-content: center; /* Zentriert die Bubbles */
+    justify-content: center;
 }
 
 .bubble-list li {
     background-color: #2c2f4a; 
     color: var(--primary-color);
-    padding: 8px 15px; /* Etwas kleineres Padding */
+    padding: 8px 15px;
     border-radius: 20px;
     display: inline-flex;
     align-items: center;
     font-weight: 700;
     font-size: 0.8em; 
     border: 1px solid #2c2f4a;
-    transition: background-color 0.3s;
-    flex-basis: calc(50% - 5px); 
-    max-width: calc(50% - 5px);
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+    /* WICHTIG: Volle Breite, damit maximal 1 Element pro Zeile ist */
+    flex-basis: 100%; 
+    max-width: 100%;
     justify-content: center; 
     text-align: center;
 }
 
-/* Icon-Style in den Bubbles */
-.bubble-list li i {
-    color: #fff; /* Icons weiß oder heller als der Bubble-Text */
-    margin-right: 8px;
+/* Hover Effekt für Bubbles */
+.bubble-list li:hover {
+    background-color: #3f51b5;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 188, 212, 0.2);
 }
 
-@media (max-width: 500px) {
-    /* Auf Mobilgeräten bleiben sie bei 2 pro Reihe, da der Platz eng ist */
-    .bubble-list li {
-        flex-basis: calc(50% - 5px);
-        max-width: calc(50% - 5px);
-    }
+/* Icon-Style in den Bubbles */
+.bubble-list li i {
+    color: #fff;
+    margin-right: 8px;
 }
 
 /* Lebenslauf Download */
@@ -282,11 +302,15 @@ ul {
     color: var(--secondary-color);
     font-weight: 700;
     font-family: var(--font-heading);
+    padding: 12px 25px; /* Button Padding vereinheitlicht */
+    border-radius: 5px;
+    transition: all 0.3s ease;
 }
 
 .btn:hover {
     background-color: #4dd0e1;
     color: var(--heading-color);
+    transform: translateY(-2px);
 }
 
 /* FOOTER STYLING */
@@ -299,7 +323,6 @@ footer {
 }
 
 .contact-info {
-    /* Füge Max-Width und Zentrierung für Footer-Inhalt hinzu */
     max-width: 1000px;
     margin: 0 auto;
 }
@@ -312,10 +335,12 @@ footer {
 
 .contact-info p {
     color: #ccc;
+    margin-bottom: 5px;
 }
 
 .contact-info p i {
     color: var(--primary-color);
+    margin-right: 10px;
 }
 
 .copyright {
@@ -334,5 +359,9 @@ footer {
     }
     .nav-links {
         gap: 20px;
+    }
+    /* Auf kleinen Screens nur eine Kategorie pro Zeile */
+    .skills-languages-grid {
+        grid-template-columns: 1fr;
     }
 }
